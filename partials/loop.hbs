@@ -1,0 +1,36 @@
+{{! This is the post loop - each post will be output using this markup }}
+{{#foreach posts}}
+<div class="article-body">
+    <div class="article-tag">
+        <div class="article-title">
+            <a href="{{url}}"><h2>{{{title}}}</h2></a>
+            <div class="link-border"></div>
+        </div>
+        <div class="left article-info">
+            <p><i class="fa fa-tags"></i> {{#if tags}}{{tags}}{{else}}未分类{{/if}}</p>
+            <p>{{date published_at format="MMMM DD, YYYY"}}</p>
+        </div>
+    </div>
+    <div class="article-background" style="background-image: url();"></div>
+    <div class="article-content">
+        {{excerpt characters="140"}}">
+        <p><a href="{{url}}">阅读全文...</a></p>
+    </div>
+    <div class="article-footer">
+        <p class="article-footer-info">
+            <span><i class="fa fa-user"></i> {{author.name}}</span>
+            <span>
+                <i class="fa fa-eye"></i>
+                <span id="post-view" data="{{url}}">Loading</span> Views
+            </span>
+            <span>
+                <i class="fa fa-comment"></i>
+                <span class="disqus-comment-count" data-disqus-url="{{url absolute="true"}}">Loading Comments</span>
+            </span>
+        </p>
+    </div>
+</div>
+{{/foreach}}
+
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}

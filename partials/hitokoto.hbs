@@ -1,0 +1,18 @@
+<script>
+function getHitokoto() {
+    $.ajax({
+        url: "https://hitokoto.tse.moe/?encode=jsc",
+        dataType: "jsonp",
+        async: true,
+        jsonp: "callback",
+        jsonpCallback: "hitokoto",
+        success: function(result) {
+            $('#hitokoto').html("<p>" + result.hitokoto + "<p>")
+        },
+        error: function() {
+            $('#hitokoto').html("<p> 读取数据失败了的说…… _(:з」∠)_<p> ")
+        }
+    })
+}
+setInterval("getHitokoto()",5555);
+</script>

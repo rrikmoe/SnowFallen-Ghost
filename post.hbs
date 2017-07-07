@@ -1,0 +1,22 @@
+{{!< default}}
+
+{{#post}}
+
+<div id="art-container">
+    <div class="article-body">
+        <div class="article-content">
+            {{ content }}
+        </div>
+        <div class="article-footer">
+            <p class="article-footer-info">
+                <span><i class="fa fa-user"></i> {{author.name}}</span>
+                <span><i class="fa fa-eye"></i> 233 Views</span>
+                <span><i class="fa fa-tags"></i> {{tags}}</span>
+                <span><i class="fa fa-comment"></i> No comment</span>
+            </p>
+        </div>
+    </div>
+    {{> comment }}
+</div>
+
+{{/post}}
